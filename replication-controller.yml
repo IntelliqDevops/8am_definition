@@ -1,0 +1,26 @@
+---
+apiVersion: v1
+kind: ReplicationController
+metadata:
+  name: ghost-rc
+  labels:
+    app: cms
+    author: intelliqit
+spec:
+  replicas: 3
+  template:
+    metadata:
+      name: ghost-pod
+      labels:
+        app: cms
+    spec:
+      containers:
+        - name: ghost
+          image: ghost
+          env:
+            - name: NODE_ENV
+              value: development
+          ports:
+            - containerPort: 2368
+              hostPort: 8080
+...

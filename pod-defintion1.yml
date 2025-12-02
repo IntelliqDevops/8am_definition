@@ -5,7 +5,7 @@ metadata:
   name: nginx-pod
   labels:
     app: proxy
-    author: intellqiit
+    author: intelliqit
 spec:
   containers:
     - name: mynginx

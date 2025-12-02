@@ -2,22 +2,21 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: nginx-deployment
+  name: redis-app-deployment
   labels:
-    app: proxy
+    name: redis-app
     author: intelliqit
 spec:
-  replicas: 2
   selector:
     matchLabels:
-      app: proxy
+      name: redis-app
   template:
     metadata:
-      name: nginx-pod
+      name: redis-app-pod
       labels:
-        app: proxy
+        name: redis-app
     spec:
       containers:
-        - name: mynginx
-          image: nginx
+        - name: redis-app
+          image: redis
 ...
